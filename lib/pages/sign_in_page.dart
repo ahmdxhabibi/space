@@ -9,7 +9,13 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 24),
-        children: [title(), emailInput(), passwordInput()],
+        children: [
+          title(),
+          emailInput(),
+          passwordInput(),
+          rememberCheckbox(),
+          loginButton()
+        ],
       ),
     );
   }
@@ -88,6 +94,51 @@ class SignInPage extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+
+  Widget rememberCheckbox() {
+    return Container(
+      margin: EdgeInsets.only(top: 32),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 20,
+            height: 20,
+            child: Checkbox(
+              value: false,
+              onChanged: (value) {},
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4)),
+            ),
+          ),
+          SizedBox(
+            width: 12,
+          ),
+          Text(
+            'Remember me',
+            style: blackTextStyle.copyWith(fontSize: 16),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget loginButton() {
+    return Container(
+      margin: EdgeInsets.only(top: 32),
+      height: 56,
+      width: double.infinity,
+      child: TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+              backgroundColor: blackColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14))),
+          child: Text(
+            'Login',
+            style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: semiBold),
+          )),
     );
   }
 }
