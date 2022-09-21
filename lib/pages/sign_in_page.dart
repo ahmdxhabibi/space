@@ -9,9 +9,7 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 24),
-        children: [
-          title(),
-        ],
+        children: [title(), emailInput(), passwordInput()],
       ),
     );
   }
@@ -46,6 +44,47 @@ class SignInPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4), color: blackColor),
               ),
             ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget emailInput() {
+    return Container(
+      margin: EdgeInsets.only(top: 48),
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+          color: whiteGreyColor, borderRadius: BorderRadius.circular(14)),
+      child: TextFormField(
+        decoration: InputDecoration.collapsed(
+            hintText: 'Email',
+            hintStyle:
+                greyTextStyle.copyWith(fontSize: 16, fontWeight: semiBold)),
+      ),
+    );
+  }
+
+  Widget passwordInput() {
+    return Container(
+      margin: EdgeInsets.only(top: 32),
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+          color: whiteGreyColor, borderRadius: BorderRadius.circular(14)),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextFormField(
+              obscureText: true,
+              decoration: InputDecoration.collapsed(
+                  hintText: 'Password',
+                  hintStyle: greyTextStyle.copyWith(
+                      fontSize: 16, fontWeight: semiBold)),
+            ),
+          ),
+          Icon(
+            Icons.visibility_outlined,
+            color: greyColor,
           )
         ],
       ),
