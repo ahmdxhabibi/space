@@ -8,13 +8,25 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
           title(),
           emailInput(),
           passwordInput(),
           rememberCheckbox(),
-          loginButton()
+          loginButton(),
+          Center(
+            child: Container(
+              margin: EdgeInsets.only(top: 24, bottom: 21),
+              child: Text(
+                'OR',
+                style:
+                    greyTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+              ),
+            ),
+          ),
+          loginGoogleButton(),
+          registerButton()
         ],
       ),
     );
@@ -22,7 +34,7 @@ class SignInPage extends StatelessWidget {
 
   Widget title() {
     return Container(
-      margin: EdgeInsets.only(top: 84),
+      margin: const EdgeInsets.only(top: 84),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,7 +43,7 @@ class SignInPage extends StatelessWidget {
             style:
                 blackAccentTextStyle.copyWith(fontSize: 24, fontWeight: bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
@@ -39,7 +51,7 @@ class SignInPage extends StatelessWidget {
               Container(
                 width: 87,
                 height: 4,
-                margin: EdgeInsets.only(right: 4),
+                margin: const EdgeInsets.only(right: 4),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4), color: blackColor),
               ),
@@ -58,8 +70,8 @@ class SignInPage extends StatelessWidget {
 
   Widget emailInput() {
     return Container(
-      margin: EdgeInsets.only(top: 48),
-      padding: EdgeInsets.all(16),
+      margin: const EdgeInsets.only(top: 48),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
           color: whiteGreyColor, borderRadius: BorderRadius.circular(14)),
       child: TextFormField(
@@ -73,8 +85,8 @@ class SignInPage extends StatelessWidget {
 
   Widget passwordInput() {
     return Container(
-      margin: EdgeInsets.only(top: 32),
-      padding: EdgeInsets.all(16),
+      margin: const EdgeInsets.only(top: 32),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
           color: whiteGreyColor, borderRadius: BorderRadius.circular(14)),
       child: Row(
@@ -88,7 +100,7 @@ class SignInPage extends StatelessWidget {
                       fontSize: 16, fontWeight: semiBold)),
             ),
           ),
-          Icon(
+          const Icon(
             Icons.visibility_outlined,
             color: greyColor,
           )
@@ -99,7 +111,7 @@ class SignInPage extends StatelessWidget {
 
   Widget rememberCheckbox() {
     return Container(
-      margin: EdgeInsets.only(top: 32),
+      margin: const EdgeInsets.only(top: 32),
       child: Row(
         children: [
           SizedBox(
@@ -112,7 +124,7 @@ class SignInPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4)),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 12,
           ),
           Text(
@@ -126,7 +138,7 @@ class SignInPage extends StatelessWidget {
 
   Widget loginButton() {
     return Container(
-      margin: EdgeInsets.only(top: 32),
+      margin: const EdgeInsets.only(top: 32),
       height: 56,
       width: double.infinity,
       child: TextButton(
@@ -139,6 +151,49 @@ class SignInPage extends StatelessWidget {
             'Login',
             style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: semiBold),
           )),
+    );
+  }
+
+  Widget loginGoogleButton() {
+    return Container(
+      margin: const EdgeInsets.only(top: 21),
+      height: 56,
+      width: double.infinity,
+      child: TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+              backgroundColor: whiteColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14))),
+          child: Text(
+            'Login with Google',
+            style: blackTextStyle.copyWith(fontSize: 18, fontWeight: semiBold),
+          )),
+    );
+  }
+
+  Widget registerButton() {
+    return Container(
+      margin: EdgeInsets.only(top: 48),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Don’t have an account?',
+            style: greyTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+          ),
+          SizedBox(
+            width: 8,
+          ),
+          TextButton(
+              onPressed: () {},
+              child: Text(
+                'Register',
+                style:
+                    blueTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
+              ))
+        ],
+      ),
     );
   }
 }
