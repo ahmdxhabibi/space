@@ -40,15 +40,15 @@ class HomePage extends StatelessWidget {
         ListView(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 24),
-              padding: EdgeInsets.symmetric(horizontal: 24),
+              margin: const EdgeInsets.only(top: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Row(
                 children: [
                   Image.asset(
                     'assets/logo_dark.png',
                     width: 53,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 8,
                   ),
                   Text(
@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
                     style:
                         blackTextStyle.copyWith(fontSize: 20, fontWeight: bold),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Image.asset(
                     'assets/icons/shopping_cart.png',
                     width: 30,
@@ -65,8 +65,8 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 30, left: 24, right: 24),
-              padding: EdgeInsets.all(16),
+              margin: const EdgeInsets.only(top: 30, left: 24, right: 24),
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(14), color: whiteColor),
               child: Row(
