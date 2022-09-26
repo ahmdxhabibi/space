@@ -7,9 +7,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('tes'),
-      ),
       backgroundColor: whiteGreyColor,
       bottomNavigationBar: ClipRRect(
         borderRadius: BorderRadius.circular(20),
@@ -38,6 +35,59 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      body: Stack(children: [
+        Image.asset('assets/img_bg.png'),
+        ListView(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 24),
+              padding: EdgeInsets.symmetric(horizontal: 24),
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/logo_dark.png',
+                    width: 53,
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    'Space',
+                    style:
+                        blackTextStyle.copyWith(fontSize: 20, fontWeight: bold),
+                  ),
+                  Spacer(),
+                  Image.asset(
+                    'assets/icons/shopping_cart.png',
+                    width: 30,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 30, left: 24, right: 24),
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(14), color: whiteColor),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Search Funiture',
+                    style: greyTextStyle.copyWith(
+                        fontSize: 16, fontWeight: semiBold),
+                  ),
+                  Image.asset(
+                    'assets/icons/search.png',
+                    width: 24,
+                    color: greyColor,
+                  )
+                ],
+              ),
+            )
+          ],
+        )
+      ]),
     );
   }
 }
