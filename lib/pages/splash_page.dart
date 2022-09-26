@@ -13,7 +13,8 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    Timer(Duration(seconds: 3), () {
+    super.initState();
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushNamedAndRemoveUntil(
           context, '/onboarding', (route) => false);
     });

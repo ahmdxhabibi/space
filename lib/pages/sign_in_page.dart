@@ -38,7 +38,7 @@ class _SignInPageState extends State<SignInPage> {
           loginButton(),
           Center(
             child: Container(
-              margin: EdgeInsets.only(top: 24, bottom: 21),
+              margin: const EdgeInsets.only(top: 24, bottom: 21),
               child: Text(
                 'OR',
                 style:
@@ -161,7 +161,7 @@ class _SignInPageState extends State<SignInPage> {
                   borderRadius: BorderRadius.circular(4)),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 12,
           ),
           Text(
@@ -183,8 +183,7 @@ class _SignInPageState extends State<SignInPage> {
             setState(() {
               isLoading = true;
             });
-
-            Future.delayed(Duration(seconds: 2), () {
+            Future.delayed(const Duration(seconds: 2), () {
               setState(() {
                 isLoading = false;
               });
@@ -194,8 +193,10 @@ class _SignInPageState extends State<SignInPage> {
                 });
                 fToast.showToast(
                     child: errorToast(),
-                    toastDuration: Duration(seconds: 2),
+                    toastDuration: const Duration(seconds: 2),
                     gravity: ToastGravity.BOTTOM);
+              } else {
+                Navigator.pushNamed(context, '/home');
               }
             });
           },
@@ -204,7 +205,7 @@ class _SignInPageState extends State<SignInPage> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14))),
           child: isLoading
-              ? CircularProgressIndicator(
+              ? const CircularProgressIndicator(
                   color: whiteColor,
                   backgroundColor: greyColor,
                 )
@@ -236,7 +237,7 @@ class _SignInPageState extends State<SignInPage> {
 
   Widget registerButton() {
     return Container(
-      margin: EdgeInsets.only(top: 8),
+      margin: const EdgeInsets.only(top: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -244,7 +245,7 @@ class _SignInPageState extends State<SignInPage> {
             'Don’t have an account?',
             style: greyTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
           ),
-          SizedBox(
+          const SizedBox(
             width: 8,
           ),
           TextButton(
@@ -261,7 +262,7 @@ class _SignInPageState extends State<SignInPage> {
 
   Widget errorToast() {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: redColor, borderRadius: BorderRadius.circular(10)),
       child: Text(
