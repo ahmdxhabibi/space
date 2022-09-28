@@ -1,9 +1,17 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:space/theme.dart';
+import 'package:space/widgets/home_category_items.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int categoryIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,6 +90,82 @@ class HomePage extends StatelessWidget {
                     width: 24,
                     color: greyColor,
                   )
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.fromLTRB(24, 30, 24, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Category',
+                    style: blackTextStyle.copyWith(
+                        fontSize: 20, fontWeight: semiBold),
+                  ),
+                  Text(
+                    'Show All',
+                    style: blackTextStyle,
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 25),
+              child: CarouselSlider(
+                items: [
+                  HomeCategoryItems(
+                      title: 'Minimalis Chair',
+                      subtitle: 'Chair',
+                      imageUrl: 'assets/image_category1.png'),
+                  HomeCategoryItems(
+                      title: 'Minimalis Table',
+                      subtitle: 'Table',
+                      imageUrl: 'assets/image_category2.png'),
+                  HomeCategoryItems(
+                      title: 'Minimalis Chair',
+                      subtitle: 'Chair',
+                      imageUrl: 'assets/image_category3.png'),
+                ],
+                options: CarouselOptions(
+                    height: 140,
+                    enableInfiniteScroll: false,
+                    viewportFraction: 1,
+                    onPageChanged: (value, _) {
+                      setState(() {
+                        categoryIndex = value;
+                      });
+                    }),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 13, left: 24, right: 24),
+              child: Row(
+                children: [
+                  Container(
+                    width: 10,
+                    height: 10,
+                    margin: EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: categoryIndex == 0 ? blackColor : lineDarkColor),
+                  ),
+                  Container(
+                    width: 10,
+                    height: 10,
+                    margin: EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: categoryIndex == 1 ? blackColor : lineDarkColor),
+                  ),
+                  Container(
+                    width: 10,
+                    height: 10,
+                    margin: EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: categoryIndex == 2 ? blackColor : lineDarkColor),
+                  ),
                 ],
               ),
             )
