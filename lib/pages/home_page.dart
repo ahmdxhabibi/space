@@ -110,6 +110,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            // NOTE: CATEGORY
             Container(
               margin: const EdgeInsets.only(top: 25),
               child: CarouselSlider(
@@ -138,14 +139,15 @@ class _HomePageState extends State<HomePage> {
                     }),
               ),
             ),
+            // NOTE: SCROLL INDICATOR
             Container(
-              margin: EdgeInsets.only(top: 13, left: 24, right: 24),
+              margin: const EdgeInsets.only(top: 13, left: 24, right: 24),
               child: Row(
                 children: [
                   Container(
                     width: 10,
                     height: 10,
-                    margin: EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.only(right: 10),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: categoryIndex == 0 ? blackColor : lineDarkColor),
@@ -153,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     width: 10,
                     height: 10,
-                    margin: EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.only(right: 10),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: categoryIndex == 1 ? blackColor : lineDarkColor),
@@ -161,11 +163,42 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     width: 10,
                     height: 10,
-                    margin: EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.only(right: 10),
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: categoryIndex == 2 ? blackColor : lineDarkColor),
                   ),
+                ],
+              ),
+            ),
+            // NOTE: POPULAR
+            Container(
+              margin: const EdgeInsets.only(top: 24),
+              decoration: const BoxDecoration(
+                  borderRadius:
+                      BorderRadius.vertical(top: Radius.circular(40))),
+              child: Column(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(24, 24, 24, 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Popular',
+                          style: blackTextStyle.copyWith(
+                              fontSize: 24, fontWeight: semiBold),
+                        ),
+                        Text(
+                          'Show All',
+                          style: blackTextStyle,
+                        )
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  )
                 ],
               ),
             )

@@ -24,7 +24,7 @@ class HomeCategoryItems extends StatelessWidget {
                   color: whiteColor, borderRadius: BorderRadius.circular(14)),
               child: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 150,
                   ),
                   Column(
@@ -36,7 +36,7 @@ class HomeCategoryItems extends StatelessWidget {
                         style: blackTextStyle.copyWith(
                             fontSize: 18, fontWeight: semiBold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 4,
                       ),
                       Text(
