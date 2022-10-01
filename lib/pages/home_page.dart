@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:space/theme.dart';
 import 'package:space/widgets/home_category_items.dart';
+import 'package:space/widgets/home_popular_items.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -175,6 +176,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               margin: const EdgeInsets.only(top: 24),
               decoration: const BoxDecoration(
+                  color: whiteColor,
                   borderRadius:
                       BorderRadius.vertical(top: Radius.circular(40))),
               child: Column(
@@ -198,6 +200,34 @@ class _HomePageState extends State<HomePage> {
                   ),
                   const SizedBox(
                     height: 16,
+                  ),
+                  SizedBox(
+                    height: 310,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          HomePopularItems(
+                              title: 'Poan Chair',
+                              imageUrl: 'assets/image_popular1.png',
+                              price: 45,
+                              isWishlist: true),
+                          HomePopularItems(
+                              title: 'Poan Chair',
+                              imageUrl: 'assets/image_popular2.png',
+                              price: 37,
+                              isWishlist: false),
+                          HomePopularItems(
+                              title: 'Poan Chair',
+                              imageUrl: 'assets/image_popular3.png',
+                              price: 28,
+                              isWishlist: false),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
                   )
                 ],
               ),
