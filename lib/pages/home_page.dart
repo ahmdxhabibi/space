@@ -73,25 +73,32 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Container(
-              margin: const EdgeInsets.only(top: 30, left: 24, right: 24),
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(14), color: whiteColor),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Search Funiture',
-                    style: greyTextStyle.copyWith(
-                        fontSize: 16, fontWeight: semiBold),
-                  ),
-                  Image.asset(
-                    'assets/icons/search.png',
-                    width: 24,
-                    color: greyColor,
-                  )
-                ],
+
+            // SEARCH BAR
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/search');
+              },
+              child: Container(
+                margin: const EdgeInsets.only(top: 30, left: 24, right: 24),
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14), color: whiteColor),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Search Funiture',
+                      style: greyTextStyle.copyWith(
+                          fontSize: 16, fontWeight: semiBold),
+                    ),
+                    Image.asset(
+                      'assets/icons/search.png',
+                      width: 24,
+                      color: greyColor,
+                    )
+                  ],
+                ),
               ),
             ),
             Container(
