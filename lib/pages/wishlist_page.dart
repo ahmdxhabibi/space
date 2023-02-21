@@ -71,6 +71,8 @@ class _WishlistPageState extends State<WishlistPage> {
           onTap: (value) {
             if (value == 0) {
               Navigator.pushNamed(context, '/home');
+            } else if (value == 2) {
+              Navigator.pushNamed(context, '/profile');
             }
           },
           items: [
