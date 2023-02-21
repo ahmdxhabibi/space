@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:space/widgets/product_grid_item.dart';
 import 'package:space/widgets/skeleton_items.dart';
+import 'package:space/widgets/product_list_item.dart';
 
 import '../theme.dart';
 
@@ -20,9 +22,14 @@ class SearchResultPage extends StatelessWidget {
               automaticallyImplyLeading: false,
               title: Row(
                 children: [
-                  const Icon(
-                    Icons.chevron_left,
-                    color: blackColor,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Icon(
+                      Icons.chevron_left,
+                      color: blackColor,
+                    ),
                   ),
                   const SizedBox(
                     width: 18,
@@ -120,7 +127,8 @@ class SearchResultPage extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        buildLoading()
+        // buildGrid()
+        buildList()
       ],
     );
   }
@@ -141,5 +149,104 @@ class SearchResultPage extends StatelessWidget {
         const SkeletonItems(),
       ],
     );
+  }
+
+  Widget buildGrid() {
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
+      spacing: 18,
+      runSpacing: 18,
+      children: [
+        const ProductGridItem(
+          title: 'White Poan Chair',
+          imageUrl: 'assets/image_search1.png',
+          price: 21,
+          isWishlist: true,
+        ),
+        const ProductGridItem(
+          title: 'Blue Poan Chair',
+          imageUrl: 'assets/image_search2.png',
+          price: 23,
+          isWishlist: false,
+        ),
+        const ProductGridItem(
+          title: 'Grey Poan Chair',
+          imageUrl: 'assets/image_search3.png',
+          price: 22,
+          isWishlist: false,
+        ),
+        const ProductGridItem(
+          title: 'Black Poan Chair',
+          imageUrl: 'assets/image_search4.png',
+          price: 41,
+          isWishlist: true,
+        ),
+        const ProductGridItem(
+          title: 'White Poan Chair',
+          imageUrl: 'assets/image_search1.png',
+          price: 21,
+          isWishlist: true,
+        ),
+        const ProductGridItem(
+          title: 'Blue Poan Chair',
+          imageUrl: 'assets/image_search2.png',
+          price: 23,
+          isWishlist: false,
+        ),
+        const ProductGridItem(
+          title: 'Grey Poan Chair',
+          imageUrl: 'assets/image_search3.png',
+          price: 22,
+          isWishlist: false,
+        ),
+        const ProductGridItem(
+          title: 'Black Poan Chair',
+          imageUrl: 'assets/image_search4.png',
+          price: 41,
+          isWishlist: true,
+        ),
+      ],
+    );
+  }
+
+  Widget buildList() {
+    return Column(children: [
+      const ProductListItem(
+          imageUrl: 'assets/image_category1.png',
+          title: 'Poan Chair',
+          price: 21),
+      const ProductListItem(
+          imageUrl: 'assets/image_category2.png',
+          title: 'Poan Table',
+          price: 45),
+      const ProductListItem(
+          imageUrl: 'assets/image_category3.png',
+          title: 'Black Poan Chair',
+          price: 34),
+      const ProductListItem(
+          imageUrl: 'assets/image_category1.png',
+          title: 'Poan Chair',
+          price: 21),
+      const ProductListItem(
+          imageUrl: 'assets/image_category2.png',
+          title: 'Poan Table',
+          price: 45),
+      const ProductListItem(
+          imageUrl: 'assets/image_category3.png',
+          title: 'Black Poan Chair',
+          price: 34),
+      const ProductListItem(
+          imageUrl: 'assets/image_category1.png',
+          title: 'Poan Chair',
+          price: 21),
+      const ProductListItem(
+          imageUrl: 'assets/image_category2.png',
+          title: 'Poan Table',
+          price: 45),
+      const ProductListItem(
+          imageUrl: 'assets/image_category3.png',
+          title: 'Black Poan Chair',
+          price: 34),
+    ]);
   }
 }
