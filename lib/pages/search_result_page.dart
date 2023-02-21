@@ -5,8 +5,26 @@ import 'package:space/widgets/product_list_item.dart';
 
 import '../theme.dart';
 
-class SearchResultPage extends StatelessWidget {
+class SearchResultPage extends StatefulWidget {
   const SearchResultPage({super.key});
+
+  @override
+  State<SearchResultPage> createState() => _SearchResultPageState();
+}
+
+class _SearchResultPageState extends State<SearchResultPage> {
+  bool isLoading = true;
+  bool isShowGrid = true;
+
+// void @override
+  void initState() {
+    Future.delayed(Duration(seconds: 2), () {
+      setState(() {
+        isLoading = false;
+      });
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -118,17 +136,27 @@ class SearchResultPage extends StatelessWidget {
               style:
                   blackTextStyle.copyWith(fontSize: 16, fontWeight: semiBold),
             ),
-            Image.asset(
-              'assets/icons/list.png',
-              width: 24,
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  isShowGrid = !isShowGrid;
+                });
+              },
+              child: Image.asset(
+                isShowGrid ? 'assets/icons/list.png' : 'assets/icons/grid.png',
+                width: 24,
+              ),
             )
           ],
         ),
         const SizedBox(
           height: 20,
         ),
-        // buildGrid()
-        buildList()
+        isLoading
+            ? buildLoading()
+            : isShowGrid
+                ? buildGrid()
+                : buildList(),
       ],
     );
   }
@@ -212,41 +240,39 @@ class SearchResultPage extends StatelessWidget {
   Widget buildList() {
     return Column(children: [
       const ProductListItem(
-          imageUrl: 'assets/image_category1.png',
-          title: 'Poan Chair',
-          price: 21),
+        title: 'White Poan Chair',
+        imageUrl: 'assets/image_search1.png',
+        price: 21,
+      ),
       const ProductListItem(
-          imageUrl: 'assets/image_category2.png',
-          title: 'Poan Table',
-          price: 45),
+          title: 'Blue Poan Chair',
+          imageUrl: 'assets/image_search2.png',
+          price: 23),
       const ProductListItem(
-          imageUrl: 'assets/image_category3.png',
+          title: 'Grey Poan Chair',
+          imageUrl: 'assets/image_search3.png',
+          price: 22),
+      const ProductListItem(
           title: 'Black Poan Chair',
-          price: 34),
+          imageUrl: 'assets/image_search4.png',
+          price: 41),
       const ProductListItem(
-          imageUrl: 'assets/image_category1.png',
-          title: 'Poan Chair',
-          price: 21),
+        title: 'White Poan Chair',
+        imageUrl: 'assets/image_search1.png',
+        price: 21,
+      ),
       const ProductListItem(
-          imageUrl: 'assets/image_category2.png',
-          title: 'Poan Table',
-          price: 45),
+          title: 'Blue Poan Chair',
+          imageUrl: 'assets/image_search2.png',
+          price: 23),
       const ProductListItem(
-          imageUrl: 'assets/image_category3.png',
+          title: 'Grey Poan Chair',
+          imageUrl: 'assets/image_search3.png',
+          price: 22),
+      const ProductListItem(
           title: 'Black Poan Chair',
-          price: 34),
-      const ProductListItem(
-          imageUrl: 'assets/image_category1.png',
-          title: 'Poan Chair',
-          price: 21),
-      const ProductListItem(
-          imageUrl: 'assets/image_category2.png',
-          title: 'Poan Table',
-          price: 45),
-      const ProductListItem(
-          imageUrl: 'assets/image_category3.png',
-          title: 'Black Poan Chair',
-          price: 34),
+          imageUrl: 'assets/image_search4.png',
+          price: 41),
     ]);
   }
 }
