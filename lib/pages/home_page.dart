@@ -22,6 +22,11 @@ class _HomePageState extends State<HomePage> {
         child: BottomNavigationBar(
           showUnselectedLabels: false,
           showSelectedLabels: false,
+          onTap: (value) {
+            if (value == 1) {
+              Navigator.pushNamed(context, '/wishlist');
+            }
+          },
           items: [
             BottomNavigationBarItem(
                 icon: Image.asset(
