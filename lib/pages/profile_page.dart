@@ -17,7 +17,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       backgroundColor: isLightMode ? whiteGreyColor : Color(0xff1F1D2B),
       bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
         child: BottomNavigationBar(
           backgroundColor: isLightMode ? null : darkColor,
           showUnselectedLabels: false,
