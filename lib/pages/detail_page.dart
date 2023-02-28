@@ -110,6 +110,21 @@ class _DetailPageState extends State<DetailPage> {
                         color: whiteColor,
                         borderRadius:
                             BorderRadius.vertical(top: Radius.circular(40))),
+                    // child: NotificationListener(
+                    //   onNotification: (Notification notif) {
+                    //     if (notif is ScrollEndNotification) {
+                    //       if (notif.metrics.minScrollExtent == -1.0) {
+                    //         setState(() {
+                    //           isExpand = true;
+                    //         });
+                    //       } else {
+                    //         setState(() {
+                    //           isExpand = false;
+                    //         });
+                    //       }
+                    //     }
+                    //     return true;
+                    //   },
                     child: SingleChildScrollView(
                       controller: scrollController,
                       child: Padding(
@@ -199,6 +214,7 @@ class _DetailPageState extends State<DetailPage> {
                         ),
                       ),
                     ),
+                    // ),
                   );
                 })),
       ]),
