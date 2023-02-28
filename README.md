@@ -1,6 +1,6 @@
 # space
 
-A new Flutter project.
+space is an Furniture Store Application that focuses on implementing animation functions in flutter using the carousel_slider and shimmer libraries
 
 ## Getting Started
 
