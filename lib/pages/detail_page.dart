@@ -12,51 +12,56 @@ class _DetailPageState extends State<DetailPage> {
   Color indicatorColor = Color(0xff394A54);
   double indicatorMargin = 5;
   int indexImg = 1;
+  bool isExpand = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: whiteGreyColor,
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.all(20),
-        width: double.infinity,
-        height: 96,
-        decoration: BoxDecoration(
-            color: whiteColor,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-        child: Row(
-          children: [
-            Container(
-              width: 56,
-              height: 56,
+      bottomNavigationBar: isExpand
+          ? null
+          : Container(
+              padding: EdgeInsets.all(20),
+              width: double.infinity,
+              height: 96,
               decoration: BoxDecoration(
-                  color: whiteGreyColor,
-                  borderRadius: BorderRadius.circular(10)),
-              child: Center(
-                child: Image.asset(
-                  'assets/icons/shopping_cart.png',
-                  width: 24,
-                ),
+                  color: whiteColor,
+                  borderRadius:
+                      BorderRadius.vertical(top: Radius.circular(20))),
+              child: Row(
+                children: [
+                  Container(
+                    width: 56,
+                    height: 56,
+                    decoration: BoxDecoration(
+                        color: whiteGreyColor,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Center(
+                      child: Image.asset(
+                        'assets/icons/shopping_cart.png',
+                        width: 24,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 16,
+                  ),
+                  Container(
+                    width: 280,
+                    height: 56,
+                    decoration: BoxDecoration(
+                        color: blackColor,
+                        borderRadius: BorderRadius.circular(14)),
+                    child: Center(
+                      child: Text(
+                        'Buy Now',
+                        style: whiteTextStyle.copyWith(
+                            fontSize: 18, fontWeight: semiBold),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
-            SizedBox(
-              width: 16,
-            ),
-            Container(
-              width: 280,
-              height: 56,
-              decoration: BoxDecoration(
-                  color: blackColor, borderRadius: BorderRadius.circular(14)),
-              child: Center(
-                child: Text(
-                  'Buy Now',
-                  style: whiteTextStyle.copyWith(
-                      fontSize: 18, fontWeight: semiBold),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
       // BOTTOM NAVBAR
       body: Stack(children: [
         Image.asset(
