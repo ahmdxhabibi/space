@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               margin: const EdgeInsets.only(top: 25),
               child: CarouselSlider(
-                items: [
+                items: const [
                   HomeCategoryItems(
                       title: 'Minimalis Chair',
                       subtitle: 'Chair',
@@ -215,7 +215,7 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(
                     height: 16,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 310,
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
@@ -240,7 +240,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   )
                 ],

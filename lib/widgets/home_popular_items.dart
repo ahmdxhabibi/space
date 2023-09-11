@@ -18,7 +18,7 @@ class HomePopularItems extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, '/detail');
       },
-      child: Container(
+      child: SizedBox(
         height: 300,
         child: Card(
           margin: const EdgeInsets.only(left: 24),
@@ -42,7 +42,7 @@ class HomePopularItems extends StatelessWidget {
               ),
               Container(
                 width: 200,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -51,7 +51,7 @@ class HomePopularItems extends StatelessWidget {
                       style: blackTextStyle.copyWith(
                           fontSize: 18, fontWeight: semiBold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
