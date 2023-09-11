@@ -17,8 +17,9 @@ class _SearchResultPageState extends State<SearchResultPage> {
   bool isShowGrid = true;
 
 // void @override
+  @override
   void initState() {
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       setState(() {
         isLoading = false;
       });
@@ -162,72 +163,72 @@ class _SearchResultPageState extends State<SearchResultPage> {
   }
 
   Widget buildLoading() {
-    return Wrap(
+    return const Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
       spacing: 18,
       runSpacing: 18,
       children: [
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
       ],
     );
   }
 
   Widget buildGrid() {
-    return Wrap(
+    return const Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
       spacing: 18,
       runSpacing: 18,
       children: [
-        const ProductGridItem(
+        ProductGridItem(
           title: 'White Poan Chair',
           imageUrl: 'assets/image_search1.png',
           price: 21,
           isWishlist: true,
         ),
-        const ProductGridItem(
+        ProductGridItem(
           title: 'Blue Poan Chair',
           imageUrl: 'assets/image_search2.png',
           price: 23,
           isWishlist: false,
         ),
-        const ProductGridItem(
+        ProductGridItem(
           title: 'Grey Poan Chair',
           imageUrl: 'assets/image_search3.png',
           price: 22,
           isWishlist: false,
         ),
-        const ProductGridItem(
+        ProductGridItem(
           title: 'Black Poan Chair',
           imageUrl: 'assets/image_search4.png',
           price: 41,
           isWishlist: true,
         ),
-        const ProductGridItem(
+        ProductGridItem(
           title: 'White Poan Chair',
           imageUrl: 'assets/image_search1.png',
           price: 21,
           isWishlist: true,
         ),
-        const ProductGridItem(
+        ProductGridItem(
           title: 'Blue Poan Chair',
           imageUrl: 'assets/image_search2.png',
           price: 23,
           isWishlist: false,
         ),
-        const ProductGridItem(
+        ProductGridItem(
           title: 'Grey Poan Chair',
           imageUrl: 'assets/image_search3.png',
           price: 22,
           isWishlist: false,
         ),
-        const ProductGridItem(
+        ProductGridItem(
           title: 'Black Poan Chair',
           imageUrl: 'assets/image_search4.png',
           price: 41,
@@ -238,38 +239,38 @@ class _SearchResultPageState extends State<SearchResultPage> {
   }
 
   Widget buildList() {
-    return Column(children: [
-      const ProductListItem(
+    return const Column(children: [
+      ProductListItem(
         title: 'White Poan Chair',
         imageUrl: 'assets/image_search1.png',
         price: 21,
       ),
-      const ProductListItem(
+      ProductListItem(
           title: 'Blue Poan Chair',
           imageUrl: 'assets/image_search2.png',
           price: 23),
-      const ProductListItem(
+      ProductListItem(
           title: 'Grey Poan Chair',
           imageUrl: 'assets/image_search3.png',
           price: 22),
-      const ProductListItem(
+      ProductListItem(
           title: 'Black Poan Chair',
           imageUrl: 'assets/image_search4.png',
           price: 41),
-      const ProductListItem(
+      ProductListItem(
         title: 'White Poan Chair',
         imageUrl: 'assets/image_search1.png',
         price: 21,
       ),
-      const ProductListItem(
+      ProductListItem(
           title: 'Blue Poan Chair',
           imageUrl: 'assets/image_search2.png',
           price: 23),
-      const ProductListItem(
+      ProductListItem(
           title: 'Grey Poan Chair',
           imageUrl: 'assets/image_search3.png',
           price: 22),
-      const ProductListItem(
+      ProductListItem(
           title: 'Black Poan Chair',
           imageUrl: 'assets/image_search4.png',
           price: 41),
