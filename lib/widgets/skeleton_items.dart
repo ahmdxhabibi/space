@@ -15,24 +15,24 @@ class SkeletonItems extends StatelessWidget {
         child: Column(
           children: [
             Shimmer.fromColors(
+                baseColor: lineDarkColor,
+                highlightColor: whiteGreyColor,
                 child: Container(
                   width: double.infinity,
                   height: 122,
                   color: lineDarkColor,
-                ),
-                baseColor: lineDarkColor,
-                highlightColor: whiteGreyColor),
+                )),
             const SizedBox(
               height: 20,
             ),
             Shimmer.fromColors(
+                baseColor: lineDarkColor,
+                highlightColor: whiteGreyColor,
                 child: Container(
                   width: double.infinity,
                   height: 22,
                   color: lineDarkColor,
-                ),
-                baseColor: lineDarkColor,
-                highlightColor: whiteGreyColor),
+                )),
             const SizedBox(
               height: 20,
             ),
@@ -40,22 +40,22 @@ class SkeletonItems extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Shimmer.fromColors(
+                    baseColor: lineDarkColor,
+                    highlightColor: whiteGreyColor,
                     child: Container(
                       width: 57,
                       height: 25,
                       color: lineDarkColor,
-                    ),
-                    baseColor: lineDarkColor,
-                    highlightColor: whiteGreyColor),
+                    )),
                 Shimmer.fromColors(
+                    baseColor: lineDarkColor,
+                    highlightColor: whiteGreyColor,
                     child: Container(
                       width: 44,
                       height: 44,
                       decoration: const BoxDecoration(
                           color: lineDarkColor, shape: BoxShape.circle),
-                    ),
-                    baseColor: lineDarkColor,
-                    highlightColor: whiteGreyColor),
+                    )),
               ],
             )
           ],

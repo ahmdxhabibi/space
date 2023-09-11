@@ -21,7 +21,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         children: [
           Expanded(
               child: CarouselSlider(
-            items: [
+            items: const [
               OnboardingItems(
                 imageUrl: 'assets/onboarding_bg1.png',
                 title: 'Buy Furniture Easily',

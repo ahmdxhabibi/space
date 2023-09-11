@@ -9,7 +9,7 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
-  Color indicatorColor = Color(0xff394A54);
+  Color indicatorColor = const Color(0xff394A54);
   double indicatorMargin = 5;
   int indexImg = 1;
   bool isExpand = false;
@@ -20,10 +20,10 @@ class _DetailPageState extends State<DetailPage> {
       bottomNavigationBar: isExpand
           ? null
           : Container(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               width: double.infinity,
               height: 96,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: whiteColor,
                   borderRadius:
                       BorderRadius.vertical(top: Radius.circular(20))),
@@ -42,7 +42,7 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 16,
                   ),
                   Container(
@@ -74,13 +74,13 @@ class _DetailPageState extends State<DetailPage> {
           child: Container(
             height: 44,
             width: 44,
-            margin: EdgeInsets.only(top: 86, left: 20),
+            margin: const EdgeInsets.only(top: 86, left: 20),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(color: lineDarkColor),
               color: whiteColor,
             ),
-            child: Icon(Icons.chevron_left),
+            child: const Icon(Icons.chevron_left),
           ),
         ),
         Padding(
@@ -106,7 +106,7 @@ class _DetailPageState extends State<DetailPage> {
                 maxChildSize: 0.9,
                 builder: (BuildContext build, scrollController) {
                   return Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: whiteColor,
                         borderRadius:
                             BorderRadius.vertical(top: Radius.circular(40))),
@@ -128,11 +128,11 @@ class _DetailPageState extends State<DetailPage> {
                     child: SingleChildScrollView(
                       controller: scrollController,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24),
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 16,
                             ),
                             Center(
@@ -144,7 +144,7 @@ class _DetailPageState extends State<DetailPage> {
                                     borderRadius: BorderRadius.circular(100)),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
@@ -161,7 +161,7 @@ class _DetailPageState extends State<DetailPage> {
                                 ),
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 16,
                             ),
                             Text(
@@ -170,25 +170,25 @@ class _DetailPageState extends State<DetailPage> {
                                 fontSize: 18,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 16,
                             ),
-                            Container(
+                            SizedBox(
                               height: 50,
                               child: Stack(
                                 alignment: Alignment.centerLeft,
                                 children: [
                                   Row(
                                     children: [
-                                      colorIndicator(Color(0xff394A54), 0),
-                                      colorIndicator(Color(0xffEBA823), 1),
-                                      colorIndicator(Color(0xff757477), 2),
-                                      colorIndicator(Color(0xff29282C), 3),
-                                      colorIndicator(Color(0xffECE9DA), 4),
+                                      colorIndicator(const Color(0xff394A54), 0),
+                                      colorIndicator(const Color(0xffEBA823), 1),
+                                      colorIndicator(const Color(0xff757477), 2),
+                                      colorIndicator(const Color(0xff29282C), 3),
+                                      colorIndicator(const Color(0xffECE9DA), 4),
                                     ],
                                   ),
                                   AnimatedContainer(
-                                    duration: Duration(milliseconds: 200),
+                                    duration: const Duration(milliseconds: 200),
                                     height: 40,
                                     width: 40,
                                     margin:
@@ -202,7 +202,7 @@ class _DetailPageState extends State<DetailPage> {
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 16,
                             ),
                             Text(
@@ -234,7 +234,7 @@ class _DetailPageState extends State<DetailPage> {
         height: 50,
         width: 50,
         decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-        margin: EdgeInsets.only(right: 18),
+        margin: const EdgeInsets.only(right: 18),
       ),
     );
   }

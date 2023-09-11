@@ -15,8 +15,9 @@ class _WishlistPageState extends State<WishlistPage> {
   bool isShowGrid = true;
 
 // void @override
+  @override
   void initState() {
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       setState(() {
         isLoading = false;
       });
@@ -29,7 +30,7 @@ class _WishlistPageState extends State<WishlistPage> {
     return Scaffold(
       backgroundColor: whiteGreyColor,
       appBar: PreferredSize(
-          preferredSize: Size(double.infinity, 60),
+          preferredSize: const Size(double.infinity, 60),
           child: AppBar(
             elevation: 0,
             backgroundColor: whiteColor,
@@ -45,7 +46,7 @@ class _WishlistPageState extends State<WishlistPage> {
                     color: blackColor,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 18,
                 ),
                 Text(
@@ -53,7 +54,7 @@ class _WishlistPageState extends State<WishlistPage> {
                   style: blackTextStyle.copyWith(
                       fontWeight: semiBold, fontSize: 18),
                 ),
-                Spacer(),
+                const Spacer(),
                 Image.asset(
                   'assets/icons/search.png',
                   color: blackColor,
@@ -100,9 +101,9 @@ class _WishlistPageState extends State<WishlistPage> {
       ),
       // BOTTOM NAVBAR
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 24),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           isLoading ? buildLoading() : buildGrid()
@@ -112,36 +113,36 @@ class _WishlistPageState extends State<WishlistPage> {
   }
 
   Widget buildLoading() {
-    return Wrap(
+    return const Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
       spacing: 18,
       runSpacing: 18,
       children: [
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
-        const SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
+        SkeletonItems(),
       ],
     );
   }
 
   Widget buildGrid() {
-    return Wrap(
+    return const Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
       spacing: 18,
       runSpacing: 18,
       children: [
-        const ProductGridItem(
+        ProductGridItem(
           title: 'White Poan Chair',
           imageUrl: 'assets/image_search1.png',
           price: 21,
           isWishlist: true,
         ),
-        const ProductGridItem(
+        ProductGridItem(
           title: 'Black Poan Chair',
           imageUrl: 'assets/image_search4.png',
           price: 41,

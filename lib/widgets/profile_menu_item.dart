@@ -15,7 +15,7 @@ class ProfileMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 30),
+      margin: const EdgeInsets.only(bottom: 30),
       child: Row(
         children: [
           Image.asset(
@@ -23,7 +23,7 @@ class ProfileMenuItem extends StatelessWidget {
             width: 24,
             color: isLightMode ? null : whiteColor,
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Text(
@@ -33,7 +33,7 @@ class ProfileMenuItem extends StatelessWidget {
                 fontWeight: semiBold,
                 color: isLightMode ? null : whiteColor),
           ),
-          Spacer(),
+          const Spacer(),
           Icon(
             Icons.chevron_right,
             color: isLightMode ? greyColor : whiteColor,

@@ -11,7 +11,7 @@ class CategoryPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: whiteGreyColor,
       appBar: PreferredSize(
-          preferredSize: Size(double.infinity, 60),
+          preferredSize: const Size(double.infinity, 60),
           child: AppBar(
             elevation: 0,
             backgroundColor: whiteColor,
@@ -27,7 +27,7 @@ class CategoryPage extends StatelessWidget {
                     color: blackColor,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 18,
                 ),
                 Text(
@@ -35,13 +35,13 @@ class CategoryPage extends StatelessWidget {
                   style: blackTextStyle.copyWith(
                       fontWeight: semiBold, fontSize: 18),
                 ),
-                Spacer(),
+                const Spacer(),
                 Image.asset(
                   'assets/icons/search.png',
                   color: blackColor,
                   width: 24,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 18,
                 ),
                 Image.asset(
@@ -52,8 +52,8 @@ class CategoryPage extends StatelessWidget {
             ),
           )),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 24),
-        children: [
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        children: const [
           SizedBox(
             height: 10,
           ),
@@ -69,49 +69,49 @@ class CategoryPage extends StatelessWidget {
             spacing: 18,
             runSpacing: 18,
             children: [
-              const ProductGridItem(
+              ProductGridItem(
                 title: 'White Poan Chair',
                 imageUrl: 'assets/image_search1.png',
                 price: 21,
                 isWishlist: true,
               ),
-              const ProductGridItem(
+              ProductGridItem(
                 title: 'Blue Poan Chair',
                 imageUrl: 'assets/image_search2.png',
                 price: 23,
                 isWishlist: false,
               ),
-              const ProductGridItem(
+              ProductGridItem(
                 title: 'Grey Poan Chair',
                 imageUrl: 'assets/image_search3.png',
                 price: 22,
                 isWishlist: false,
               ),
-              const ProductGridItem(
+              ProductGridItem(
                 title: 'Black Poan Chair',
                 imageUrl: 'assets/image_search4.png',
                 price: 41,
                 isWishlist: true,
               ),
-              const ProductGridItem(
+              ProductGridItem(
                 title: 'White Poan Chair',
                 imageUrl: 'assets/image_search1.png',
                 price: 21,
                 isWishlist: true,
               ),
-              const ProductGridItem(
+              ProductGridItem(
                 title: 'Blue Poan Chair',
                 imageUrl: 'assets/image_search2.png',
                 price: 23,
                 isWishlist: false,
               ),
-              const ProductGridItem(
+              ProductGridItem(
                 title: 'Grey Poan Chair',
                 imageUrl: 'assets/image_search3.png',
                 price: 22,
                 isWishlist: false,
               ),
-              const ProductGridItem(
+              ProductGridItem(
                 title: 'Black Poan Chair',
                 imageUrl: 'assets/image_search4.png',
                 price: 41,

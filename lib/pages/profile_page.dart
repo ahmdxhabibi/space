@@ -15,9 +15,9 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: isLightMode ? whiteGreyColor : Color(0xff1F1D2B),
+      backgroundColor: isLightMode ? whiteGreyColor : const Color(0xff1F1D2B),
       bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
         child: BottomNavigationBar(
           backgroundColor: isLightMode ? null : darkColor,
           showUnselectedLabels: false,
@@ -58,12 +58,12 @@ class _ProfilePageState extends State<ProfilePage> {
       body: Stack(children: [
         Image.asset(
           'assets/img_bg.png',
-          color: isLightMode ? null : Color(0xffD8D8D8),
+          color: isLightMode ? null : const Color(0xffD8D8D8),
         ),
         ListView(
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 30, top: 70, right: 24),
+              padding: const EdgeInsets.only(left: 30, top: 70, right: 24),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,7 +75,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         'assets/profile.png',
                         width: 120,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 32,
                       ),
                       Text(
@@ -96,12 +96,12 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Container(
                       height: 44,
                       width: 88,
-                      padding: EdgeInsets.all(4),
+                      padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
                           color: isLightMode ? whiteColor : darkColor),
                       child: AnimatedAlign(
-                          duration: Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 300),
                           alignment: isLightMode
                               ? Alignment.centerLeft
                               : Alignment.centerRight,
@@ -114,13 +114,13 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 50),
-              padding: EdgeInsets.symmetric(
+              margin: const EdgeInsets.only(top: 50),
+              padding: const EdgeInsets.symmetric(
                 horizontal: 24,
                 vertical: 32,
               ),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.vertical(
+                  borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(36),
                   ),
                   color: isLightMode ? whiteColor : darkColor),
